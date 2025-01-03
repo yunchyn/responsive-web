@@ -6,6 +6,7 @@ const Conatiner = styled.nav`
   width: 100%;
   border-bottom: 1px solid var(--primary);
   position: fixed;
+  z-index: 10;
   background-color: white;
 `;
 

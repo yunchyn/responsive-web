@@ -30,7 +30,7 @@ export default function MenuBar() {
       {menuItems.map((item, index) => (
         <MenuIcon
           key={index}
-          to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+          // to={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
         >
           {item}
         </MenuIcon>
