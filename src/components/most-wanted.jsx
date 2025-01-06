@@ -3,14 +3,6 @@ import { ProductCard } from "./product-card";
 import { ProductList } from "../styled-utilities";
 
 const Container = styled.div`
-  /* width: 100%;
-  background-color: var(--primary);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 40px;
-  padding: 80px 0px;
-  color: white; */
   padding: 80px 60px;
   background-color: var(--primary);
   color: white;
@@ -18,10 +10,18 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 40px;
+
+  @media (max-width: 1100px) {
+    padding: 40px 16px;
+  }
 `;
 
-const HeadWrapper = styled.div``;
+const HeadWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
 
 const Heading = styled.div`
   color: white;

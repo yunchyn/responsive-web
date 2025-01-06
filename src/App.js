@@ -3,21 +3,10 @@ import { createGlobalStyle } from "styled-components";
 import reset from "styled-reset";
 import Home from "./routes/home";
 import Layout from "./layout";
+import "./font.css";
 
 const GlobalStyles = createGlobalStyle`
 ${reset};
-@font-face {
-  font-family: "Regular";
-  src: url("/fonts/Inter-Regular.ttf") format("truetype");
-}
-@font-face {
-  font-family: "SemiBold";
-  src: url("/fonts/Inter-SemiBold.ttf") format("truetype");
-}
-@font-face {
-  font-family: "Heading";
-  src: url("/fonts/LibreBaskerville-Bold.ttf") format("truetype");
-}
 
 // 색상표
 :root {

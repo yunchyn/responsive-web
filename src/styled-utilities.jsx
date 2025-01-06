@@ -16,11 +16,11 @@ export const PrimaryButton = styled(Link)`
     background-color: var(--secondary);
   }
 
-  @media (max-width: 1279px) {
+  @media (max-width: 1200px) {
     font-size: 16px;
     line-height: 24px;
   }
-  @media (max-width: 1110px) {
+  @media (max-width: 1000px) {
     font-size: 14px;
     line-height: 20px;
   }
@@ -36,9 +36,14 @@ export const Grey600Button = styled(Link)`
   margin-left: 24px;
   margin-top: 140px;
 
-  @media (max-width: 1110px) {
+  @media (max-width: 1000px) {
     margin-left: 18px;
     margin-top: 118px;
+  }
+
+  @media (max-width: 500px) {
+    margin-left: 22px;
+    margin-top: 204px;
   }
 
   text-decoration: none;
@@ -60,4 +65,23 @@ export const ProductList = styled.div`
   gap: 24px;
   justify-content: center;
   padding: 0px 20px;
+  /* display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 24px;
+  justify-items: center;
+  padding: 0px 20px; */
+
+  /* @media (max-width: 1100px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    justify-items: center;
+    padding: 0px;
+  } */
+
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    justify-items: center;
+    padding: 0px;
+  }
 `;

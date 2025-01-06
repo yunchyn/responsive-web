@@ -1,0 +1,12 @@
+@font-face {
+  font-family: "Regular";
+  src: url("../public/fonts/Inter-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "SemiBold";
+  src: url("../public/fonts/Inter-SemiBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "Heading";
+  src: url("../public/fonts/LibreBaskerville-Bold.ttf") format("truetype");
+}

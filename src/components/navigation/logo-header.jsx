@@ -7,6 +7,10 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-between;
   padding: 16px 60px;
+
+  @media (max-width: 500px) {
+    padding: 12px 16px 6px 16px;
+  }
 `;
 
 const LinkedIcon = styled(Link)``;
@@ -15,6 +19,10 @@ const LogoImg = styled.img`
   width: 120px;
   height: 48px;
   object-fit: contain;
+
+  @media (max-width: 500px) {
+    width: 70px;
+  }
 `;
 
 const SvgWrapper = styled.div`
@@ -28,6 +36,10 @@ const SvgWrapper = styled.div`
 const IconSvg = styled.svg`
   width: 32px;
   height: 32px;
+  @media (max-width: 500px) {
+    width: 28px;
+    height: 28px;
+  }
 `;
 
 export default function LogoHeader() {
@@ -45,8 +57,6 @@ export default function LogoHeader() {
         <LinkedIcon to="/user">
           <IconSvg>
             <svg
-              width="32"
-              height="32"
               viewBox="0 0 48 48"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -69,8 +79,6 @@ export default function LogoHeader() {
         <LinkedIcon to="/cart">
           <IconSvg>
             <svg
-              width="32"
-              height="32"
               viewBox="0 0 48 48"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"

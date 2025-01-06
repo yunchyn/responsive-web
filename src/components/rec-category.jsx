@@ -8,6 +8,15 @@ const RecommendCategory = styled.div`
   align-items: center;
   gap: 1.8%;
   padding: 80px 60px;
+  background-color: white;
+
+  @media (max-width: 500px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+    gap: 16px;
+    padding: 24px 16px;
+    justify-items: center;
+  }
 `;
 
 const RecommendHeading = styled.div`
@@ -34,9 +43,14 @@ const CatergoryImg = styled.img`
   height: 200px;
   border-radius: 8px;
 
-  @media (max-width: 1110px) {
+  @media (max-width: 1200px) {
     width: 170px;
     height: 170px;
+  }
+  @media (max-width: 500px) {
+    width: 90vw;
+    height: 260px;
+    object-fit: cover;
   }
 `;
 

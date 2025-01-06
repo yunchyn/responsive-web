@@ -7,6 +7,10 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 40px;
+
+  @media (max-width: 1100px) {
+    padding: 40px 16px;
+  }
 `;
 
 const HeadWrapper = styled.div``;

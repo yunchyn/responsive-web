@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MenuBar from "./menu-bar";
+import MobileMenuBar from "./m-menu-bar";
 import LogoHeader from "./logo-header";
 
 const Conatiner = styled.nav`
@@ -11,12 +12,17 @@ const Conatiner = styled.nav`
 `;
 
 const SaleBar = styled.div`
-  background-color: #658c4a;
+  background-color: var(--primary);
   color: white;
-  height: 56px;
+  padding: 16px 0px;
   font-family: "Semibold";
   font-size: 16px;
   line-height: 24px;
+
+  @media (max-width: 500px) {
+    font-size: 14px;
+    line-height: 20px;
+  }
 
   display: flex;
   align-items: center;
@@ -29,6 +35,7 @@ export default function Navigation() {
       <SaleBar>Free Shipping with minimum purchase Rp250.000</SaleBar>
       <LogoHeader />
       <MenuBar />
+      <MobileMenuBar />
     </Conatiner>
   );
 }

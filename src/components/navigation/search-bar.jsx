@@ -7,6 +7,10 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: center;
   padding: 16px;
+
+  @media (max-width: 500px) {
+    display: none;
+  }
 `;
 
 const SearchInputWrapper = styled.div`
