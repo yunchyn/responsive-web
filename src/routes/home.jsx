@@ -1,4 +1,5 @@
 import Banner from "../components/banner";
+import Footer from "../components/footer";
 import MostWantedProducts from "../components/most-wanted";
 import NewArrivalProducts from "../components/new-arrival";
 import RecommendedCategory from "../components/rec-category";
@@ -12,6 +13,7 @@ export default function Home() {
       <MostWantedProducts />
       <NewArrivalProducts />
       <SubBanner />
+      <Footer />
     </>
   );
 }

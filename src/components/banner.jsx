@@ -15,6 +15,7 @@ const HeadContainer = styled.div`
   align-items: center;
   text-align: center;
   gap: 24px;
+  overflow: hidden;
 
   @media (max-width: 500px) {
     width: 100%;
