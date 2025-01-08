@@ -26,6 +26,11 @@ export const PrimaryButton = styled(Link)`
   }
 `;
 
+export const SecondaryButton = styled(PrimaryButton)`
+  background-color: var(--secondary);
+  color: var(--primary);
+`;
+
 export const Grey600Button = styled(Link)`
   position: absolute;
   display: flex;

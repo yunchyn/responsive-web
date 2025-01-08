@@ -1,6 +1,28 @@
-import { useState } from "react";
-import styled from "styled-components";
+import { useEffect, useRef, useState } from "react";
+import styled, { keyframes } from "styled-components";
 import { menuItems } from "./menu-bar";
+
+const slideDown = keyframes`
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 500px; 
+    opacity: 1;
+  }
+`;
+
+const slideUp = keyframes`
+  from {
+    max-height: 500px;
+    opacity: 1;
+  }
+  to {
+    max-height: 0;
+    opacity: 0;
+  }
+`;
 
 const Container = styled.div`
   width: 100%;
@@ -57,14 +79,12 @@ const IconSvg = styled.svg`
 `;
 
 const Menu = styled.div`
-  display: ${(props) => (props.isOpen ? "block" : "none")};
-
+  overflow: hidden;
+  max-height: ${(props) => (props.isOpen ? "500px" : "0")};
+  background-color: var(--white);
   border-top: 1px solid var(--primary);
   width: 100%;
-  height: 100%;
-  background-color: var(--white);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  z-index: 999;
+  animation: ${(props) => (props.shouldAnimate ? (props.isOpen ? slideDown : slideUp) : "none")} 0.5s ease-in-out;
 `;
 
 const MenuItem = styled.div`
@@ -85,6 +105,7 @@ const MenuItem = styled.div`
 export default function MobileMenuBar() {
   const [searchTerm, setSearchTerm] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const isInitialRender = useRef(true);
 
   const handleSearchChange = (event) => {
     setSearchTerm(event.target.value);
@@ -93,6 +114,12 @@ export default function MobileMenuBar() {
   const toggleMenu = () => {
     setIsMenuOpen((prevState) => !prevState);
   };
+
+  useEffect(() => {
+    if (isInitialRender.current) {
+      isInitialRender.current = false;
+    }
+  }, []);
 
   return (
     <>
@@ -136,22 +163,13 @@ export default function MobileMenuBar() {
               d="M3 16.25C2.58579 16.25 2.25 16.5858 2.25 17C2.25 17.4142 2.58579 17.75 3 17.75H21C21.4142 17.75 21.75 17.4142 21.75 17C21.75 16.5858 21.4142 16.25 21 16.25H3Z"
               fill="#333333"
             />
-            <path
-              d="M2.25 7C2.25 6.58579 2.58579 6.25 3 6.25H21C21.4142 6.25 21.75 6.58579 21.75 7C21.75 7.41421 21.4142 7.75 21 7.75H3C2.58579 7.75 2.25 7.41421 2.25 7Z"
-              stroke="#333333"
-            />
-            <path
-              d="M2.25 12C2.25 11.5858 2.58579 11.25 3 11.25H21C21.4142 11.25 21.75 11.5858 21.75 12C21.75 12.4142 21.4142 12.75 21 12.75H3C2.58579 12.75 2.25 12.4142 2.25 12Z"
-              stroke="#333333"
-            />
-            <path
-              d="M3 16.25C2.58579 16.25 2.25 16.5858 2.25 17C2.25 17.4142 2.58579 17.75 3 17.75H21C21.4142 17.75 21.75 17.4142 21.75 17C21.75 16.5858 21.4142 16.25 21 16.25H3Z"
-              stroke="#333333"
-            />
           </svg>
         </IconSvg>
       </Container>
-      <Menu isOpen={isMenuOpen}>
+      <Menu
+        isOpen={isMenuOpen}
+        shouldAnimate={!isInitialRender.current}
+      >
         {menuItems.map((item, index) => (
           <MenuItem key={index}>{item}</MenuItem>
         ))}

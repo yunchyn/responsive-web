@@ -18,6 +18,7 @@ const SaleBar = styled.div`
   font-family: "Semibold";
   font-size: 16px;
   line-height: 24px;
+  text-align: center;
 
   @media (max-width: 500px) {
     font-size: 14px;

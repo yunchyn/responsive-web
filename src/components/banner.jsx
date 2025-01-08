@@ -64,7 +64,8 @@ const SubHeading = styled.div`
 
 const BannerImg = styled.img`
   width: 50%;
-  object-fit: contain;
+  height: auto;
+  object-fit: cover;
   justify-content: auto;
   @media (max-width: 500px) {
     width: 100%;

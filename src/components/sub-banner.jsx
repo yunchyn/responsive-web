@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { PrimaryButton, ProductList } from "../styled-utilities";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Subscribe from "./subscribe";
 
 const SubBannerWrapper = styled.div`
   display: flex;
@@ -119,6 +120,7 @@ const WeAreExistWrapper = styled.div`
   height: 310px;
   background-image: url("/img/media-bg.png");
   background-size: cover;
+  padding-bottom: 20px;
 
   display: flex;
   flex-direction: row;
@@ -203,75 +205,6 @@ const MediaItem = styled.img`
   }
 `;
 
-const SubscribeWrapper = styled.div`
-  width: 100%;
-  height: 600px;
-  background-image: url("/img/subscribe-bg.png");
-  background-size: cover;
-`;
-
-const SubscribeCard = styled.div`
-  background-color: white;
-  border-radius: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 24px;
-  width: 568px;
-  padding: 40px;
-  font-family: "Semibold";
-  font-size: 20px;
-  line-height: 28px;
-
-  margin-left: 70px;
-  margin-top: 280px;
-  position: absolute;
-`;
-
-const SubscribeDesc = styled.div`
-  color: var(--grey-500);
-  font-family: "Regular";
-`;
-
-const InputWrapper = styled.div`
-  position: relative;
-`;
-
-const SubscribeInput = styled.input`
-  width: 544px;
-  height: 60px;
-  padding-left: 24px;
-  font-family: "Regular";
-  font-size: 16px;
-  line-height: 24px;
-  border-radius: 40px;
-  border: 1px solid var(--grey-200);
-  ::placeholder {
-    color: var(--grey-400);
-  }
-`;
-
-const SubscribeButton = styled(Link)`
-  position: absolute;
-  top: 0;
-  right: 0;
-  margin: 5.5px;
-
-  text-decoration: none;
-  background-color: var(--primary);
-  color: white;
-  font-family: "SemiBold";
-  border-radius: 40px;
-  font-size: 20px;
-  line-height: 28px;
-  padding: 12px 24px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-  &:hover {
-    color: var(--primary);
-    background-color: var(--secondary);
-  }
-`;
-
 const mediaImages = [
   "/img/media1.png",
   "/img/media2.png",
@@ -284,11 +217,6 @@ const mediaImages = [
 ];
 
 export default function SubBanner() {
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (event) => {
-    setEmail(event.target.value);
-  };
   return (
     <>
       <SubBannerWrapper>
@@ -389,21 +317,7 @@ export default function SubBanner() {
           </MediaList>
         </ListWrapper>
       </WeAreExistWrapper>
-      <SubscribeWrapper>
-        <SubscribeCard>
-          Subscribe to our newsletter
-          <SubscribeDesc>Be the first to know about exclusive offers, eco-tips, and new arrivals!</SubscribeDesc>
-          <InputWrapper>
-            <SubscribeInput
-              type="text"
-              placeholder="Your email"
-              value={email}
-              onChange={handleSubmit}
-            />
-            <SubscribeButton>Subscribe</SubscribeButton>
-          </InputWrapper>
-        </SubscribeCard>
-      </SubscribeWrapper>
+      <Subscribe />
     </>
   );
 }
